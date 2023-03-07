@@ -70,3 +70,9 @@ function cs() {
     echo ""
     ls
 }
+
+if [[ $AUTO_TMUX ]]; then
+    if [[ -z "$TMUX" ]]; then
+        tmux attach -t TMUX || tmux new -s TMUX
+    fi
+fi
