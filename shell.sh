@@ -58,8 +58,6 @@ else
     echo "Shell: $SHELL"
 fi
 
-autoload -U colors && colors
-
 # Aliases
 
 alias ll="clear; pwd; ls -lh"
