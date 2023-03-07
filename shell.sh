@@ -70,6 +70,12 @@ function cs() {
     ls
 }
 
+function hosts() {
+    if [[ -f ~/.ssh/config ]]; then
+        cat ~/.ssh/config | grep "Host " | sed "s/Host //"
+    fi
+}
+
 if [[ $AUTO_TMUX == true ]]; then
     if [[ -z "$TMUX" ]]; then
         tmux attach -t TMUX || tmux new -s TMUX
