@@ -8,9 +8,6 @@ case $- in
       *) return;;
 esac
 
-export PATH=/opt/homebrew/bin:$PATH
-PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
-
 export $(cat "$HOME/dotfiles/conf.env" | xargs)
 
 VISUAL=vim
