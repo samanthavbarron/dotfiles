@@ -32,7 +32,7 @@ fi
 
 
 if [[ $CONTROLLER ]]; then
-    echo "Controller""
+    echo "Controller"
 else
     echo "Not controller"
 fi
