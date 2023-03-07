@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Import variables
 
 export $(cat conf.env | xargs)
