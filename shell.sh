@@ -49,12 +49,13 @@ HISTTIMEFORMAT='%F %T '            # Do we want a timestamp for commands?
 
 # Colors
 
-#if [[ $(basename $SHELL) == "zsh" ]]; then
-if [[ false ]]; then
+if [[ $(basename $SHELL) == "zsh" ]]; then
     autoload -U colors && colors
     PROMPT="%F{magenta}%n%f%F{white}@%f%F{cyan}%m%f %F{magenta}%1~%f%F{white} >%f "
+elif [[ $(basename $SHELL) == "bash" ]]; then
+    PS1="\[\e[35m\]\u\[\e[m\]\[\e[37m\]@\[\e[m\]\[\e[36m\]\h\[\e[m\]\[\e[35m\]\w\[\e[m\]\[\e[37m\] > \[\e[m\] "
 else
-    PS1="\u@\h %1~ > "
+    echo "Shell: $SHELL"
 fi
 
 autoload -U colors && colors
