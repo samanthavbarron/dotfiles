@@ -1,11 +1,9 @@
 #!/bin/bash
 
 # Import variables
-
 export $(cat conf.env | xargs)
 
 # Determine and set preferred shell
-
 CURRENT_SHELL=$(basename $SHELL)
 if [[ $(basename $SHELL) != $SHELL_PREF ]]; then
     if [[ $(command -v $SHELL_PREF) ]]; then
@@ -19,10 +17,10 @@ else
 fi
 
 # Source shell.sh to config file
-
 ln -sf "$HOME/dotfiles/shell.sh" "$HOME/.shell.sh"
 RC_PATH="$HOME/.$(basename $CURRENT_SHELL)rc"
 touch $RC_PATH
+
 # Check if this line exists on $RC_PATH, if not append it
 src_cmd="[ -r ~/.shell.sh ] && source ~/.shell.sh"
 if [[ $(cat $RC_PATH | grep -w "$src_cmd") ]]; then
@@ -30,4 +28,11 @@ if [[ $(cat $RC_PATH | grep -w "$src_cmd") ]]; then
 else
     echo ""
     echo $src_cmd >> $RC_PATH
+fi
+
+
+if [[ $CONTROLLER ]]; then
+    echo "Controller""
+else
+    echo "Not controller"
 fi
