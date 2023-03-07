@@ -20,6 +20,7 @@ fi
 
 ln -sf "$HOME/dotfiles/shell.sh" "$HOME/.shell.sh"
 RC_PATH="$HOME/.$(basename $CURRENT_SHELL)rc"
+touch $RC_PATH
 # Check if this line exists on $RC_PATH, if not append it
 src_cmd="[ -r ~/.shell.sh ] && source ~/.shell.sh"
 if [[ $(cat $RC_PATH | grep -w "$src_cmd") ]]; then
