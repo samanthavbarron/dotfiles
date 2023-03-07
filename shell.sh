@@ -58,7 +58,7 @@ fi
 # Aliases
 
 alias ll="clear; pwd; ls -lh"
-alias tm="tmux attach || tmux"
+alias tm="~/dotfiles/tm_attach.sh"
 
 function cs() {
     cd $1
@@ -76,7 +76,7 @@ function hosts() {
 
 if [[ $AUTO_TMUX == true ]]; then
     if [[ -z "$TMUX" ]]; then
-        tmux attach -t TMUX || tmux new -s TMUX
+        tm
     fi
 fi
 
