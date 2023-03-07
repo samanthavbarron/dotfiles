@@ -61,6 +61,7 @@ fi
 # Aliases
 
 alias ll="clear; pwd; ls -lh"
+alias tm="tmux attach || tmux"
 
 function cs() {
     cd $1
@@ -81,3 +82,4 @@ if [[ $AUTO_TMUX == true ]]; then
         tmux attach -t TMUX || tmux new -s TMUX
     fi
 fi
+
