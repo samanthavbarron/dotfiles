@@ -1,4 +1,5 @@
 #!/bin/bash
+echo $PATH
 
 tmux_format_str="#{session_id}: #{?session_attached,attached,not attached}"
 tmux_session_name=false
