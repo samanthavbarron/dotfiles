@@ -72,7 +72,7 @@ function cs() {
     ls
 }
 
-if [[ $AUTO_TMUX ]]; then
+if [[ $AUTO_TMUX == true ]]; then
     if [[ -z "$TMUX" ]]; then
         tmux attach -t TMUX || tmux new -s TMUX
     fi
